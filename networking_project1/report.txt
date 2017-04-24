@@ -1,0 +1,18 @@
+Project_1 client/server application utilizes TCP connection on port 9999.
+To interact with the server, your script must abide by the following rules:
+
+client initiates tcp connection with server
+Server accepts tcp connection
+client sends sentence -> takes user input and stores to sentence variable
+Server recevies sentence -> server receives input and stores to variable sentence
+Server sends response  -> sends request to client for referance to function call (upper,lower,reverse)
+client receives response ->
+client sends command -> client sends command to server
+Server receives command ->server receives command and executes function. Default is reverse function.
+Server sends response -> server responds with modified string
+client receives response ->client prints out response from server
+
+
+TCP offers data integrity whereas UDP does not therefor when sending messages, TCP is preferred. The protocol I used, TCP maintains a state. Using UDP would not guarentee data reliability and therefore for sending messages would not be the best option,
+
+This server is able to communicate with multiple servers at the same time. For each connection request a new client socket is created and a state is maintained. I did notice that the server must handle one client at a time, for example when it is awaiting a response from client A, client B must wait until the response is receiveed by the server from client A before client B can send a request.
